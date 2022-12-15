@@ -1,0 +1,53 @@
+<form class="form">
+  <h1>Novo Tecnico</h1>
+  <mat-form-field class="form-full-width">
+    <mat-label>Nome Completo</mat-label>
+    <input
+      [(ngModel)]="tecnico.nome"
+      [formControl]="nome"
+      required
+      name="nome"
+      matInput
+      placeholder="Ex. Rafael Rodrigues"
+      value=""
+    />
+    <mat-error *ngIf="nome.invalid">{{ errorValidNome() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-full-width">
+    <mat-label>CPF</mat-label>
+    <input
+      [(ngModel)]="tecnico.cpf"
+      [formControl]="cpf"
+      required
+      name="cpf"
+      matInput
+      placeholder="EX.000.000.000-00"
+      value=""
+    />
+    <mat-error *ngIf="cpf.invalid">{{ errorValidCpf() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-full-width">
+    <mat-label>Telefone</mat-label>
+    <input
+      [(ngModel)]="tecnico.telefone"
+      [formControl]="telefone"
+      required
+      name="telefone"
+      matInput
+      placeholder="Ex. (00) 99000-0000"
+      value=""
+    />
+    <mat-error *ngIf="telefone.invalid">{{ errorValidTelefone() }}</mat-error>
+  </mat-form-field>
+  <div class="buttonbox">
+    <button
+      mat-stroked-button
+      color="accent"
+      [disabled]="errorValidNome() || errorValidCpf() || errorValidTelefone()"
+      (click)="create()"
+    >
+      Criar
+    </button>
+    <button mat-stroked-button color="warn" (click)="cancel()">Cancelar</button>
+  </div>
+</form>
