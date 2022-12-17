@@ -6,6 +6,7 @@ import { Tecnico } from 'src/app/Models/tecnico';
 import { TecnicoService } from '../../../../services/tecnico.service';
 
 
+
 @Component({
   selector: 'app-tecnico-read',
   templateUrl: './tecnico-read.component.html',
@@ -15,7 +16,7 @@ export class TecnicoReadComponent implements AfterViewInit {
 
   LISTA_TECNICOS: Tecnico[] = [];
 
-  displayedColumns: string[] = ['id', 'nome', 'cpf', 'telefone'];
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'telefone', 'actions'];
   dataSource = new MatTableDataSource<Tecnico>(this.LISTA_TECNICOS);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -28,7 +29,6 @@ export class TecnicoReadComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-
     this.findAll();
   }
 
@@ -43,13 +43,18 @@ export class TecnicoReadComponent implements AfterViewInit {
   navigateToCreate():void{
     this.router.navigate(['tecnicos/create'])
   }
+
+  navigateToUpdate(id: any):void{
+    this.router.navigate(['tecnicos/update/'+ id])
+  }
+
+  navigateToDelete(id: any):void{
+    this.router.navigate(['tecnicos/delete/'+ id])
+  }
+
+
 }
 
-const LISTA_TECNICOS: Tecnico[] = [
-  {
-    id: 1, nome:"Rafael", cpf:"407.328.348-05", telefone: "015-997907807"
-  }
-];
 
 
 

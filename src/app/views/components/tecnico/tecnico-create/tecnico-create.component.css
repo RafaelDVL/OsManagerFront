@@ -1,6 +1,9 @@
 .form{
     width: 50%;
     margin: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.63);
+    padding: 20px;
 }
 
 h1{
@@ -21,4 +24,6 @@ button{
     width: 20%;
     padding: 20px;
     margin: 1rem .5rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
 }

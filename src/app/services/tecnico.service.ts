@@ -25,6 +25,22 @@ export class TecnicoService {
     return this.http.post<Tecnico>(url, tecnico);
   }
 
+  update(tecnico: Tecnico, id: any):Observable<Tecnico>{
+    const url = this.baseUrl + "/tecnicos/" + id;
+    return this.http.put<Tecnico>(url, tecnico);
+  }
+
+  findByID(id: any):Observable<Tecnico>{
+    const url = this.baseUrl + "/tecnicos/"+ id;
+    return this.http.get<Tecnico>(url);
+  }
+
+
+  delete(id: any):Observable<void>{
+    const url = this.baseUrl + "/tecnicos/" + id;
+    return this.http.delete<void>(url);
+  }
+
   openSnackBar(message: string):void {
     this.snackBar.open(`${message}`, "OK",
       {duration: 3000}

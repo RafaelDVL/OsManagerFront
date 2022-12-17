@@ -30,6 +30,18 @@
         <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td class="boxbuttonstec" mat-cell *matCellDef="let element">
+          <button mat-stroked-button color="primary" (click)="navigateToUpdate(element.id)">
+            <mat-icon>edit_note</mat-icon>
+            Editar</button>
+          <button mat-stroked-button color="warn" (click)="navigateToDelete(element.id)" >
+            <mat-icon>delete</mat-icon>
+            Excluir</button>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>

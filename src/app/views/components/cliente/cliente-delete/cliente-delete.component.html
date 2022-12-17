@@ -1,0 +1,48 @@
+<form class="form">
+  <h1>Deletar Cliente</h1>
+  <mat-form-field class="form-full-width">
+    <mat-label>Nome Completo</mat-label>
+    <input
+      readonly="true"
+      [(ngModel)]="cliente.nome"
+      [formControl]="nome"
+      name="nome"
+      matInput
+      placeholder="Ex. Rafael Rodrigues"
+      value=""
+    />
+  </mat-form-field>
+  <mat-form-field class="form-full-width">
+    <mat-label>CPF</mat-label>
+    <input
+      readonly="true"
+      [(ngModel)]="cliente.cpf"
+      [formControl]="cpf"
+      required
+      name="cpf"
+      matInput
+      placeholder="EX.000.000.000-00"
+      value=""
+    />
+  </mat-form-field>
+  <mat-form-field class="form-full-width">
+    <mat-label>Telefone</mat-label>
+    <input
+      readonly="true"
+      [(ngModel)]="cliente.telefone"
+      [formControl]="telefone"
+      required
+      name="telefone"
+      matInput
+      placeholder="Ex. (00) 99000-0000"
+      value=""
+    />
+  </mat-form-field>
+  <div class="buttonbox">
+    <button mat-stroked-button color="accent" (click)="deleteById()">Deletar
+    </button>
+    <button mat-stroked-button color="warn" (click)="cancel()">Cancelar</button>
+  </div>
+</form>
+
+
