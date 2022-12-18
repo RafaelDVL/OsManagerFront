@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Atualizar dados de ordem de serviço</h1>
+  <div>
+    <mat-form-field class="cardbox"  appearance="fill">
+      <mat-label>Selecione um tecnico atender a ordem.</mat-label>
+      <mat-select [(value)]="objOS.tecnico" required="">
+        <mat-option *ngFor="let tecnico of LISTA_TECNICOS" value="{{tecnico.id}}">{{tecnico.nome}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="cardbox" appearance="fill">
+      <mat-label>Selecione um cliente.</mat-label>
+      <mat-select [(value)]="objOS.cliente" required="">
+        <mat-option *ngFor="let cliente of LISTA_CLIENTES" value="{{cliente.id}}">{{cliente.nome}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="cardbox" appearance="fill">
+      <mat-label>Selecione uma status.</mat-label>
+      <mat-select [(value)]="objOS.status">
+        <mat-option value="0" >Aberto</mat-option>
+        <mat-option value="1" >Em Andamento</mat-option>
+        <mat-option value="2" >Encerrado</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="cardbox" appearance="fill">
+      <mat-label>Selecione uma prioridade.</mat-label>
+      <mat-select [(value)]="objOS.prioridade">
+        <mat-option selected value="0" >Baixa</mat-option>
+        <mat-option value="1" >Média</mat-option>
+        <mat-option value="2" >Alta</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <form class="form">
+    <mat-form-field class="cardboxtext">
+      <mat-label>Adicione as observações:</mat-label>
+      <textarea [(ngModel)]="objOS.observacoes" name="observacoes" matInput placeholder="Digite uma observação..." maxlength="254"></textarea>
+    </mat-form-field>
+  </form>
+
+  <button class="mat-elevation-z1" mat-stroked-button color="primary" (click)="update()">Atualizar</button>
+  <button class="mat-elevation-z1" mat-stroked-button color="warn" (click)="cancel()">Cancelar</button>
+  </div>
+
+

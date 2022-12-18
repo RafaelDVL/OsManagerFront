@@ -1,0 +1,28 @@
+.container{
+  width: 70%;
+  margin: auto;
+}
+
+mat-label{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardbox{
+  margin: 10px;
+  border-radius: 4px;
+  background-color: rgba(63, 62, 62, 0.24);
+}
+
+.cardboxtext{
+  width: 100%;
+}
+
+textarea{
+  min-height: 10rem;
+  max-height: 23rem;
+}
+
+button{
+  margin: 5px;
+}
