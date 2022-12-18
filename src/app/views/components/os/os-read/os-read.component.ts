@@ -16,7 +16,7 @@ export class OsReadComponent implements AfterViewInit {
 
   LISTA_OS: OS[] = [];
 
-  displayedColumns: string[] = ['tecnico','cliente', 'dataabert', 'datafech', 'prioridade', 'observacoes','status',];
+  displayedColumns: string[] = ['tecnico','cliente', 'dataabert', 'datafech', 'prioridade', 'observacoes','status', 'actions'];
   dataSource = new MatTableDataSource<OS>(this.LISTA_OS);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
