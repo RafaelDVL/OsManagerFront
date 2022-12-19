@@ -6,10 +6,9 @@
 <div class="mat-elevation-z8 container">
     <table mat-table [dataSource]="dataSource">
 
-
-      <ng-container matColumnDef="dataabert">
-        <th mat-header-cell *matHeaderCellDef> Data Abertura </th>
-        <td mat-cell *matCellDef="let element"> {{element.dataAbertura}} </td>
+      <ng-container matColumnDef="datafech">
+        <th mat-header-cell *matHeaderCellDef> Data fechamento </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataFechamento}} </td>
       </ng-container>
 
       <ng-container matColumnDef="prioridade">

@@ -26,7 +26,7 @@ export class OsService {
   }
 
   update(os: OS, id: any):Observable<OS>{
-    const url = this.baseUrl + "/os" + id;
+    const url = this.baseUrl + "/os/" + id;
     console.log(os);
     return this.http.put<OS>(url, os);
   }

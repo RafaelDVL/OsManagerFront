@@ -73,11 +73,14 @@ export class OsUpdateComponent implements OnInit {
   }
 
   update():void{
+    console.log(this.osid);
+    console.log(this.objOS);
       this.osservice.update(this.objOS,this.osid).subscribe(
         resposta => {
           this.osservice.openSnackBar("Ordem de serviço atualizada com sucesso.")
           this.router.navigate(['os'])
         })
+
   }
 
   converteDados():void{

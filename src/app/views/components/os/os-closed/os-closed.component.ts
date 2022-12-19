@@ -5,18 +5,18 @@ import { Router } from '@angular/router';
 import { OS } from 'src/app/Models/OS';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { OsService } from 'src/app/services/os.service';
-import { TecnicoService } from '../../../../services/tecnico.service';
+import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-os-read',
-  templateUrl: './os-read.component.html',
-  styleUrls: ['./os-read.component.css']
+  selector: 'app-os-closed',
+  templateUrl: './os-closed.component.html',
+  styleUrls: ['./os-closed.component.css']
 })
-export class OsReadComponent implements AfterViewInit {
+export class OsClosedComponent implements AfterViewInit {
 
   LISTA_OS: OS[] = [];
 
-  displayedColumns: string[] = ['tecnico','cliente', 'dataabert','prioridade', 'observacoes','status', 'actions'];
+  displayedColumns: string[] = ['tecnico','cliente','datafech', 'prioridade', 'observacoes','status', 'actions'];
   dataSource = new MatTableDataSource<OS>(this.LISTA_OS);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -36,10 +36,11 @@ export class OsReadComponent implements AfterViewInit {
 
   findAll():void{
     this.service.findAll().subscribe(resposta => {
+
       resposta.forEach(y => {
-        if(y.status != "ENCERRADO"){
+        if(y.status == "ENCERRADO"){
           this.LISTA_OS.push(y);
-          console.log(y);
+          console.log(y)
         }
       })
       this.listarTecnico();
