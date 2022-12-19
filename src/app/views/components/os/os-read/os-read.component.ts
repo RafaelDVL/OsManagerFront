@@ -83,8 +83,8 @@ export class OsReadComponent implements AfterViewInit {
     this.router.navigate(['os/update/'+ id])
   }
 
-  navigateToDelete(id: any):void{
-    this.router.navigate(['os/delete/'+ id])
+  navigateToView(id: any):void{
+    this.router.navigate(['os/view/'+ id])
   }
 
 

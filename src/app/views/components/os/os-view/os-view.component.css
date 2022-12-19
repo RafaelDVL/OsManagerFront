@@ -1,0 +1,25 @@
+.container{
+  width: 70%;
+  margin: auto;
+}
+
+mat-card{
+  padding: 8px;
+}
+
+h1{
+  text-align: center;
+}
+
+#textoutput{
+  text-align: end;
+  padding: 8px;
+}
+
+#observation{
+  text-align: center;
+}
+
+button{
+  margin: 5px;
+}

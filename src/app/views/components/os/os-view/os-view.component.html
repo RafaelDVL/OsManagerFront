@@ -1,1 +1,12 @@
-<p>os-view works!</p>
+<div class="container">
+
+  <h1>Observações da ordem de serviço</h1>
+  <mat-card class="mat-elevation-z8">
+     <p id="textoutput">Data de abertura: {{ os.dataAbertura}}</p>
+     <p id="observation">{{ os.observacoes}}</p>
+  </mat-card>
+  <button mat-fab extended color="basic" (click)="navegateBack()">
+    <mat-icon>arrow_back</mat-icon>
+    Voltar
+  </button>
+</div>
